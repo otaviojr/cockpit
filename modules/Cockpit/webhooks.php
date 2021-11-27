@@ -60,7 +60,7 @@ foreach ($webhooks as $webhook) {
                     }
                 }
 
-                $auth = $webhook['auth'] ?? null; 
+                $auth = $webhook['auth'] ?? null;
 
                 $webHookCalls[] = compact('url', 'data', 'headers', 'auth');
 
@@ -70,7 +70,7 @@ foreach ($webhooks as $webhook) {
 }
 
 $app->on('shutdown', function() use($webHookCalls) {
-        
+
     if (!count($webHookCalls)) {
         return;
     }

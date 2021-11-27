@@ -391,6 +391,11 @@ if (!defined('COCKPIT_INSTALL')) {
     include_once(__DIR__.'/webhooks.php');
 }
 
+// WEBHOOKS
+if (!defined('COCKPIT_INSTALL')) {
+    include_once(__DIR__.'/broker.php');
+}
+
 // REST
 if (COCKPIT_API_REQUEST) {
 

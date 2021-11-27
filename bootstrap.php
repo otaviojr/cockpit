@@ -109,6 +109,7 @@ function cockpit($module = null) {
             'i18n'         => 'en',
             'database'     => ['server' => 'mongolite://'.(COCKPIT_STORAGE_FOLDER.'/data'), 'options' => ['db' => 'cockpitdb'], 'driverOptions' => [] ],
             'memory'       => ['server' => 'redislite://'.(COCKPIT_STORAGE_FOLDER.'/data/cockpit.memory.sqlite'), 'options' => [] ],
+            'broker'       => ['active' => false, 'address' => '', 'options' => [ 'topic' => '']],
 
             'paths'         => [
                 '#root'     => COCKPIT_DIR,
@@ -214,7 +215,7 @@ function cockpit($module = null) {
 
         // mailer service
         $app->service('mailer', function() use($app, $config){
-            
+
             $options = isset($config['mailer']) ? $config['mailer']:[];
 
             if (is_string($options)) {
