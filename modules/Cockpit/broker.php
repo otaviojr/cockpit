@@ -50,7 +50,6 @@ if ($broker['active'] && $broker['address'] && $broker['options']['topic']) {
         $app->on($evt, function() use($evt, $broker, $brokerCalls) {
             $data = json_encode([
                 'event' => $evt,
-                'hook'  => $webhook['name'],
                 'backend' => COCKPIT_ADMIN,
                 'args' => func_get_args()
             ]);
