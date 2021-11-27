@@ -47,9 +47,7 @@ $broker = $app['config']['broker'];
 if ($broker['active'] && $broker['address'] && $broker['options']['topic']) {
 
     foreach ($events as $evt) {
-
         $app->on($evt, function() use($evt, $broker, $brokerCalls) {
-
             $data = json_encode([
                 'event' => $evt,
                 'hook'  => $webhook['name'],
@@ -72,7 +70,7 @@ $app->on('shutdown', function() use($brokerCalls, $broker) {
     $conf = new RdKafka\Conf();
     $rk = new RdKafka\Producer($conf);
     $rk->addBrokers($broker['address']);
-    $topic = $rk->newTopic($broker['options']['topic'] || 'cockpit');
+    $topic = $rk->newTopic((isset($broker['options']['topic']) ? $broker['options']['topic'] : 'cockpit'));
 
     foreach ($brokerCalls as $call) {
         $this->trigger('cockpit.broker', [&$call]);
