@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Deny access to database + config files
 <Files ~ "\.(sqlite|sdb|s3db|db|yaml|yml)$">
     <IfVersion >= 2.4>
@@ -29,6 +30,14 @@
 # Don't show directory listings
 Options -Indexes
 
+=======
+# Don't show directory listings
+Options -Indexes
+
+# Character encoding: Serve text/html or text/plain as UTF-8
+AddDefaultCharset UTF-8
+
+>>>>>>> 6a9ab7505a95350aec9e020848dadaf510ebfa1e
 # URL rewrites
 <IfModule mod_rewrite.c>
 
@@ -38,7 +47,13 @@ Options -Indexes
     # RewriteBase /
 
     # Protect some contents
+<<<<<<< HEAD
     RewriteRule ^.*/?\.git+ - [F,L]
+=======
+    RewriteRule (^|/)\.(?!well-known\/) - [F,L]
+    RewriteRule \.(sqlite|sdb|s3db|db|yaml|yml|env)$ - [F,L]
+    RewriteRule (config|modules|addons|lib)\/(.*)\.php$ - [F,L]
+>>>>>>> 6a9ab7505a95350aec9e020848dadaf510ebfa1e
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -46,8 +61,11 @@ Options -Indexes
 
 </IfModule>
 
+<<<<<<< HEAD
 AddDefaultCharset utf-8
 
+=======
+>>>>>>> 6a9ab7505a95350aec9e020848dadaf510ebfa1e
 AddType application/javascript          js jsonp tag
 AddType application/json                json
 

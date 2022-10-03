@@ -8,6 +8,7 @@
 .vscode
 .env
 composer.lock
+<<<<<<< HEAD
 package-lock.json
 /lib/**/doc/*
 /lib/**/docs/*
@@ -16,6 +17,22 @@ package-lock.json
 /lib/**/tests/*
 /lib/**/test/*
 /lib/**/\.github/*
+=======
+composer.phar
+package-lock.json
+/.spaces/
+/lib/**/.github/*
+/lib/**/bin/*
+/lib/**/doc/*
+/lib/**/docs/*
+/lib/**/demo/*
+/lib/**/example/*
+/lib/**/Examples/*
+/lib/**/phpunit*
+/lib/**/tests/*
+/lib/**/test/*
+/lib/**/vendor-bin/*
+>>>>>>> 6a9ab7505a95350aec9e020848dadaf510ebfa1e
 /lib/**/\.travis/*
 /lib/**/\.travis.yml
 /storage/*.*
@@ -28,7 +45,13 @@ addons/
 !.gitkeep
 !/storage/*/index.html
 !/storage/*/.htaccess
+<<<<<<< HEAD
 defines.php
 # Sublime Text
 *.sublime-workspace
 *.sublime-project
+=======
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+>>>>>>> 6a9ab7505a95350aec9e020848dadaf510ebfa1e
